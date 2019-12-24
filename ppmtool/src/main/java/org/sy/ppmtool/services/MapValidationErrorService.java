@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class MapValidationErrorService {
 
-    public ResponseEntity<?> mapValidationService(BindingResult result) {
+    public ResponseEntity<?> MapValidationService(BindingResult result) {
         if (result.hasErrors()) {
             Map<String, String> errorMap = result.getFieldErrors().stream().collect(Collectors.toMap(FieldError::getField, FieldError::getDefaultMessage));
             return new ResponseEntity<Map<String, String>>(errorMap, HttpStatus.BAD_REQUEST);
