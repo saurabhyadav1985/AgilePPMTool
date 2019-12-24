@@ -3,6 +3,7 @@ package org.sy.ppmtool.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.sy.ppmtool.domain.Project;
+import org.sy.ppmtool.exceptions.ProjectIdException;
 import org.sy.ppmtool.repositories.ProjectRepository;
 
 @Service
@@ -12,7 +13,12 @@ public class ProjectService {
     private ProjectRepository projectRepository;
 
     public Project saveOfUpdateProject(Project project){
-        //logic
-        return projectRepository.save(project);
+        try{
+            project.setProjectIdentifier(project.getProjectIdentifier().toUpperCase());
+            return projectRepository.save(project);
+        }
+        catch(Exception ex){
+            throw new ProjectIdException("Project ID " + project.getProjectIdentifier().toUpperCase() + " already exists");
+        }
     }
 }
