@@ -9,7 +9,7 @@ class AddProject extends Component {
     this.state = {
       projectName: "",
       projectIdentifier: "",
-      desciption: "",
+      description: "",
       startDate: "",
       endDate: ""
     };
@@ -27,7 +27,7 @@ class AddProject extends Component {
     const newProject = {
       projectName: this.state.projectName,
       projectIdentifier: this.state.projectIdentifier,
-      desciption: this.state.desciption,
+      description: this.state.description,
       startDate: this.state.startDate,
       endDate: this.state.endDate
     };
@@ -61,7 +61,6 @@ class AddProject extends Component {
                     name="projectIdentifier"
                     value={this.state.projectIdentifier}
                     onChange={this.onChange}
-                    disabled
                   />
                 </div>
                 <div className="form-group">
