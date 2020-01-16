@@ -5,6 +5,39 @@ import { connect } from "react-redux";
 import classnames from "classnames";
 
 class UpdateProject extends Component {
+  //set state
+  constructor() {
+    super();
+    this.state = {
+      id: "",
+      projectName: "",
+      projectIdentifier: "",
+      description: "",
+      startDate: "",
+      endDate: ""
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const {
+      id,
+      projectName,
+      projectIdentifier,
+      description,
+      startDate,
+      endDate
+    } = nextProps.project;
+
+    this.setState({
+      id,
+      projectName,
+      projectIdentifier,
+      description,
+      startDate,
+      endDate
+    });
+  }
+
   componentDidMount() {
     const { id } = this.props.match.params;
     this.props.getProject(id, this.props.history);
@@ -24,6 +57,8 @@ class UpdateProject extends Component {
                     type="text"
                     className="form-control form-control-lg "
                     placeholder="Project Name"
+                    name="projectName"
+                    value={this.state.projectName}
                   />
                 </div>
                 <div className="form-group">
@@ -31,6 +66,8 @@ class UpdateProject extends Component {
                     type="text"
                     className="form-control form-control-lg"
                     placeholder="Unique Project ID"
+                    name="projectIdentifier"
+                    value={this.state.projectIdentifier}
                     disabled
                   />
                 </div>
@@ -38,6 +75,8 @@ class UpdateProject extends Component {
                   <textarea
                     className="form-control form-control-lg"
                     placeholder="Project Description"
+                    name="description"
+                    value={this.state.description}
                   ></textarea>
                 </div>
                 <h6>Start Date</h6>
@@ -45,7 +84,9 @@ class UpdateProject extends Component {
                   <input
                     type="date"
                     className="form-control form-control-lg"
-                    name="start_date"
+                    name="startDate"
+                    name="description"
+                    value={this.state.startDate}
                   />
                 </div>
                 <h6>Estimated End Date</h6>
@@ -54,6 +95,8 @@ class UpdateProject extends Component {
                     type="date"
                     className="form-control form-control-lg"
                     name="end_date"
+                    name="endDate"
+                    value={this.state.endDate}
                   />
                 </div>
 
