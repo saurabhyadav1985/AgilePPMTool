@@ -5,7 +5,7 @@ orbs:
 
 parameters:
   app_src_directory: 
-    default : '/AgilePPMTool/ppmtool'
+    default : 'ppmtool'
     type: 'string'
     
 workflows:
