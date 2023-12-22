@@ -1,2 +1,3 @@
-# AgilePPMTool
-Build using Java and ReactJS
+### AgilePPMTool
+
+This repository contains code and resources related to an Agile Project Portfolio Management (PPM) tool. Designed for organizations embracing Agile methodologies, the tool facilitates dynamic project management, allowing teams to plan, prioritize, and execute projects with flexibility. With features such as visual boards, real-time collaboration, and integration with popular Agile frameworks like Scrum and Kanban, this tool empowers teams to adapt to changing requirements and deliver incremental value. The repository includes code for user-friendly interfaces, advanced reporting, and analytics, supporting the principles of transparency, inspection, and adaptation crucial for successful Agile project management. Streamline your project portfolio processes and enhance collaboration with this Agile PPM tool.
